@@ -1,22 +1,28 @@
-import React from 'react'
-// import './src/Components/Header.css';
+import React from "react";
 import logo from '../imagee-removebg-preview.png'
+import { Link } from "react-router-dom";
+
 
 export default function Header() {
 	
     return (
-		
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+		<nav class="navbar navbar-expand-lg  navbar-light">
+            <a class="navbar-brand" href="#">
                 <img src={logo} width="80" height="80"/>
                 GESTION DES TICKETS
                 </a>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>		
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+    <li className="nav-item active">
+            <Link className="nav-link" to="/">
+              Tickets <span className="sr-only">(current)</span>
+            </Link>
+          </li>
+    </ul>
+  </div>
+</nav>	
     )
 }

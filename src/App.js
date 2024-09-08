@@ -1,20 +1,29 @@
 import React from 'react';
-import Home from './Component/Home';
+import TicketList from './Component/TicketList';
 import Header from './Component/Header';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import TicketDetails from './Pages/TicketDetails';
+import TicketCreate from './Pages/TicketCreate';
+import TicketUpdate from './Pages/TicketUpdate';
 import './Component/App.css';
 import './Component/Header.css';
-import axios from "axios";
+
+
 
 function App() {
-  const feax = async () => {
-    const a = await axios.get("https://localhost:7161/api/Ticket");
-    console.log(a);
-  }
   return (
     <div className="App">
-      <Header/>     
-      <Home/>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<TicketList />} />
+          <Route path="/create" element={<TicketCreate />} />
+          <Route path="/update/:id" element={<TicketUpdate />} />
+          <Route path="/ticket/:id" element={<TicketDetails />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
+
 export default App;
