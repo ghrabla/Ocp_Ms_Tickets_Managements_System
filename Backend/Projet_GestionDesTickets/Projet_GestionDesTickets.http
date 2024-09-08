@@ -1,0 +1,6 @@
+@Projet_GestionDesTickets_HostAddress = http://localhost:5269
+
+GET {{Projet_GestionDesTickets_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
